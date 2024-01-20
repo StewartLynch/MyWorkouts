@@ -1,8 +1,12 @@
 # MyWorkouts - Calendar Tally Video
 
+## Development Branch
+
 ![mac128](Images/mac128.png)
 
-This is the starter project branch for the video on creating a calendar that will display a tally count on days where workouts occurred.
+This is the development branch for the Calendar Tally Video.  Code here may be incomplete or incorrect.  
+
+DO NOT CLONE
 
 If you want to support my work, you can - </br>
 
