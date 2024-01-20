@@ -19,36 +19,42 @@ struct ActivityListView: View {
     @State private var path = NavigationPath()
     var body: some View {
         NavigationStack(path: $path) {
-            List(activities) { activity in
-                NavigationLink(value: activity){
-                    HStack {
-                        Image(systemName: activity.icon)
-                            .foregroundStyle(Color(hex: activity.hexColor)!)
-                            .font(.system(size: 30))
-                            .frame(width: 50)
-                        Text(activity.name.capitalized)
-                        Spacer()
-                        Text("^[\(activity.workouts.count) workout](inflect: true)")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+            Group {
+                if activities.isEmpty {
+                    ContentUnavailableView("Create your first Activity by tapping on the \(Image(systemName: "plus.circle.fill")) button at the top.", image: "launchScreen")
+                } else {
+                    List(activities) { activity in
+                        NavigationLink(value: activity){
+                            HStack {
+                                Image(systemName: activity.icon)
+                                    .foregroundStyle(Color(hex: activity.hexColor)!)
+                                    .font(.system(size: 30))
+                                    .frame(width: 50)
+                                Text(activity.name.capitalized)
+                                Spacer()
+                                Text("^[\(activity.workouts.count) workout](inflect: true)")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                modelContext.delete(activity)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                modalType = .updateActivity(activity)
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                        }
                     }
-                }
-                .swipeActions(edge: .trailing) {
-                    Button(role: .destructive) {
-                        modelContext.delete(activity)
-                    } label: {
-                        Label("Delete", systemImage: "trash")
-                    }
-                }
-                .swipeActions(edge: .leading) {
-                    Button {
-                        modalType = .updateActivity(activity)
-                    } label: {
-                        Label("Edit", systemImage: "pencil")
-                    }
+                    .listStyle(.plain)
                 }
             }
-            .listStyle(.plain)
             .navigationTitle("Activities")
             .toolbar {
                 Button {

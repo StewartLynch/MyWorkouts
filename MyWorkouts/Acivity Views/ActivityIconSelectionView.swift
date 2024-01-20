@@ -57,7 +57,7 @@ struct ActivityIconSelectionView: View {
 
 #Preview {
     struct Preview: View {
-        @State private var selectedIcon:ActivitySymbol = .two
+        @State private var selectedIcon:ActivitySymbol = .mixedCardio
         var body: some View {
             ActivityIconSelectionView(selectingIcon: .constant(true), selectedIcon: $selectedIcon)
         }

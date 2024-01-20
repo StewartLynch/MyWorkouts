@@ -19,15 +19,19 @@ struct WorkoutFormView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 20) {
                 LabeledContent {
-                    DatePicker("Date", selection: $model.date)
+                    DatePicker("", selection: $model.date)
                 } label: {
-                    Text("Date")
+                    Text("Date/Time")
                 }
-                TextField("Comment", text: $model.comment, axis: .vertical)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(height: 40)
+                LabeledContent {
+                    
+                    TextField("How did it go?", text: $model.comment, axis: .vertical)
+                        .textFieldStyle(.roundedBorder)
+                } label: {
+                    Text("Comment")
+                }
                 Button(model.updating ? "Update" : "Create") {
                     if model.updating {
                         model.workout?.date = model.date
@@ -40,6 +44,7 @@ struct WorkoutFormView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.top)
                 Spacer()
             }
             .padding()

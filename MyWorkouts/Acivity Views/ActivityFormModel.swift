@@ -14,7 +14,7 @@ import SwiftUI
 @Observable
 class ActivityFormModel {
     var name = ""
-    var icon: ActivitySymbol = .two
+    var icon: ActivitySymbol = .mixedCardio
     var hexColor: Color = .red
     
     var activity: Activity?
@@ -26,7 +26,7 @@ class ActivityFormModel {
     init(activity: Activity) {
         self.activity = activity
         self.name = activity.name
-        self.icon = ActivitySymbol(rawValue: activity.icon) ?? .two
+        self.icon = ActivitySymbol(rawValue: activity.icon) ?? .mixedCardio
         self.hexColor = Color(hex: activity.hexColor)!
     }
     

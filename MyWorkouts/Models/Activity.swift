@@ -18,7 +18,7 @@ import SwiftData
     var icon: ActivitySymbol.RawValue
     var hexColor: String
     var workouts: [Workout] = []
-    init(name: String, icon: ActivitySymbol = .two, hexColor: String = "FF0000") {
+    init(name: String, icon: ActivitySymbol = .mixedCardio, hexColor: String = "FF0000") {
         self.name = name
         self.icon = icon.rawValue
         self.hexColor = hexColor

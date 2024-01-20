@@ -21,7 +21,7 @@ struct ActivityFormView: View {
         ZStack {
             Color(UIColor.systemBackground).ignoresSafeArea()
             NavigationStack {
-                VStack {
+                VStack(spacing: 20) {
                     LabeledContent {
                         TextField("Name", text: $model.name)
                             .textFieldStyle(.roundedBorder)
@@ -43,28 +43,24 @@ struct ActivityFormView: View {
                     } label: {
                         Text("Activity color")
                     }
-                    Group{
-                        Button(model.updating ? "Update" : "Create") {
-                            if model.updating {
-                                model.activity?.name = model.name
-                                model.activity?.icon = model.icon.rawValue
-                                model.activity?.hexColor = model.hexColor.toHex()!
-                                
-                            } else {
-                                let newActivity = Activity(name: model.name, icon: model.icon, hexColor: model.hexColor.toHex()!)
-                                modelContext.insert(newActivity)
-                            }
-                            dismiss()
+                    .padding(.top)
+                    Button(model.updating ? "Update" : "Create") {
+                        if model.updating {
+                            model.activity?.name = model.name
+                            model.activity?.icon = model.icon.rawValue
+                            model.activity?.hexColor = model.hexColor.toHex()!
+                            
+                        } else {
+                            let newActivity = Activity(name: model.name, icon: model.icon, hexColor: model.hexColor.toHex()!)
+                            modelContext.insert(newActivity)
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding(.horizontal)
-                        .buttonStyle(.borderedProminent)
-                        .disabled(model.disabled)
+                        dismiss()
                     }
-                    
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.horizontal)
                     .buttonStyle(.borderedProminent)
-                    .disabled(model.name.isEmpty)
+                    .disabled(model.disabled)
+                    .padding(.top)
                     Spacer()
                 }
                 .padding()

@@ -13,6 +13,7 @@
 		BB43F9B42B5B409C00572F74 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9B32B5B409C00572F74 /* Color+Extension.swift */; };
 		BB43F9B72B5B46D900572F74 /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9B62B5B46D900572F74 /* ModalType.swift */; };
 		BB43F9BA2B5B486900572F74 /* ActivityFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9B92B5B486900572F74 /* ActivityFormModel.swift */; };
+		BB511F312B5C3E5900E9CEB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB511F302B5C3E5900E9CEB7 /* Launch Screen.storyboard */; };
 		BB7E64562B5B829700862170 /* WorkoutFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E64552B5B829700862170 /* WorkoutFormModel.swift */; };
 		BB7E64582B5B845000862170 /* WorkoutFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E64572B5B845000862170 /* WorkoutFormView.swift */; };
 		BBD55D142B5A18F600440A69 /* MyWorkoutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD55D132B5A18F600440A69 /* MyWorkoutsApp.swift */; };
@@ -32,6 +33,7 @@
 		BB43F9B32B5B409C00572F74 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		BB43F9B62B5B46D900572F74 /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
 		BB43F9B92B5B486900572F74 /* ActivityFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormModel.swift; sourceTree = "<group>"; };
+		BB511F302B5C3E5900E9CEB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BB7E64552B5B829700862170 /* WorkoutFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFormModel.swift; sourceTree = "<group>"; };
 		BB7E64572B5B845000862170 /* WorkoutFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFormView.swift; sourceTree = "<group>"; };
 		BBD55D102B5A18F600440A69 /* MyWorkouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorkouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +70,8 @@
 		BB43F9B82B5B482900572F74 /* Acivity Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB43F9AD2B5B0AA400572F74 /* ActivitySymbol.swift */,
 				BBD55D152B5A18F600440A69 /* ActivityListView.swift */,
+				BB43F9AD2B5B0AA400572F74 /* ActivitySymbol.swift */,
 				BBD55D2E2B5A4BD000440A69 /* ActivityFormView.swift */,
 				BB43F9B92B5B486900572F74 /* ActivityFormModel.swift */,
 				BB43F9AF2B5B0AB600572F74 /* ActivityIconSelectionView.swift */,
@@ -109,9 +111,10 @@
 				BBD55D132B5A18F600440A69 /* MyWorkoutsApp.swift */,
 				BB43F9B82B5B482900572F74 /* Acivity Views */,
 				BB43F9BD2B5B524400572F74 /* WWorkout Views */,
+				BBD55D252B5A1B0300440A69 /* Models */,
 				BB43F9B62B5B46D900572F74 /* ModalType.swift */,
 				BB43F9B52B5B40A000572F74 /* Extensions */,
-				BBD55D252B5A1B0300440A69 /* Models */,
+				BB511F302B5C3E5900E9CEB7 /* Launch Screen.storyboard */,
 				BBD55D172B5A18F700440A69 /* Assets.xcassets */,
 				BBD55D192B5A18F700440A69 /* Preview Content */,
 			);
@@ -193,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB511F312B5C3E5900E9CEB7 /* Launch Screen.storyboard in Resources */,
 				BBD55D1B2B5A18F700440A69 /* Preview Assets.xcassets in Resources */,
 				BBD55D182B5A18F700440A69 /* Assets.xcassets in Resources */,
 			);
@@ -355,11 +359,13 @@
 				DEVELOPMENT_TEAM = RKV4UP49S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,11 +390,13 @@
 				DEVELOPMENT_TEAM = RKV4UP49S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -19,43 +19,49 @@ struct WorkoutsListView: View {
     var activity: Activity
     var body: some View {
         @Bindable var activity = activity
-        List(activity.workouts.sorted(
-                using: KeyPathComparator(
-                    \Workout.date,
-                     order: .reverse
+        Group {
+            if activity.workouts.isEmpty{
+                ContentUnavailableView("Create your first \(activity.name) workout by tapping on the \(Image(systemName: "plus.circle.fill")) button at the top.", systemImage: "\(activity.icon)")
+            } else {
+                List(activity.workouts.sorted(
+                    using: KeyPathComparator(
+                        \Workout.date,
+                         order: .reverse
+                    )
                 )
-            )
-        ) { workout in 
-            HStack {
-                Image(systemName: activity.icon)
-                    .foregroundStyle(Color(hex: activity.hexColor)!)
-                VStack(alignment: .leading) {
-                    Text(workout.date.formatted(date: .abbreviated, time: .shortened))
-                    Text(workout.comment)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .swipeActions(edge: .trailing) {
-                Button(role: .destructive) {
-                    if let index = activity.workouts.firstIndex(where: {$0.id == workout.id}) {
-                        activity.workouts.remove(at: index)
+                ) { workout in
+                    HStack {
+                        Image(systemName: activity.icon)
+                            .foregroundStyle(Color(hex: activity.hexColor)!)
+                        VStack(alignment: .leading) {
+                            Text(workout.date.formatted(date: .abbreviated, time: .shortened))
+                            Text(workout.comment)
+                                .foregroundStyle(.secondary)
+                        }
                     }
-                    
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                }
-            }
-            .swipeActions(edge: .leading) {
-                Button {
-                    if let index = activity.workouts.firstIndex(where: {$0.id == workout.id}) {
-                        modalType = .updateWorkout(activity.workouts[index])
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            if let index = activity.workouts.firstIndex(where: {$0.id == workout.id}) {
+                                activity.workouts.remove(at: index)
+                            }
+                            
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
                     }
-                } label: {
-                    Label("Edit", systemImage: "pencil")
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            if let index = activity.workouts.firstIndex(where: {$0.id == workout.id}) {
+                                modalType = .updateWorkout(activity.workouts[index])
+                            }
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                        }
+                    }
                 }
+                .listStyle(.plain)
             }
         }
-        .listStyle(.plain)
         .toolbar {
             ToolbarItem(placement: .principal) {
                     Text("\(Image(systemName: activity.icon)) \(activity.name)")
