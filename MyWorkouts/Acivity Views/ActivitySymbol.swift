@@ -12,6 +12,7 @@
 import Foundation
 
 enum ActivitySymbol: String, CaseIterable {
+    case mixedCardio = "figure.mixed.cardio"
     case two = "figure.2"
     case walk = "figure.walk"
     case walkDeparture = "figure.walk.departure"
@@ -63,7 +64,6 @@ enum ActivitySymbol: String, CaseIterable {
     case lacrosse = "figure.lacrosse"
     case martialArts = "figure.martial.arts"
     case mindAndBody = "figure.mind.and.body"
-    case mixedCardio = "figure.mixed.cardio"
     case openWaterSwim = "figure.open.water.swim"
     case outdoorCycle = "figure.outdoor.cycle"
     case oar2Crossed = "oar.2.crossed"

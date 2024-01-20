@@ -29,6 +29,7 @@ struct WorkoutFormView: View {
                     
                     TextField("How did it go?", text: $model.comment, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
+                        .frame(minHeight: 60)
                 } label: {
                     Text("Comment")
                 }

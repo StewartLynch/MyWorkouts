@@ -76,7 +76,7 @@ struct WorkoutsListView: View {
                 }
                 .sheet(item: $modalType) { sheet in
                     sheet
-                        .presentationDetents([.height(200)])
+                        .presentationDetents([.height(300)])
                 }
             }
         }
