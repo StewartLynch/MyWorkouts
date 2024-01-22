@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB10D5DD2B5F144F005482C1 /* StartTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10D5DC2B5F144F005482C1 /* StartTab.swift */; };
+		BB10D5E02B5F184A005482C1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10D5DF2B5F184A005482C1 /* CalendarView.swift */; };
+		BB10D5E22B5F196F005482C1 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10D5E12B5F196F005482C1 /* CalendarHeaderView.swift */; };
 		BB43F9AE2B5B0AA400572F74 /* ActivitySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9AD2B5B0AA400572F74 /* ActivitySymbol.swift */; };
 		BB43F9B02B5B0AB600572F74 /* ActivityIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9AF2B5B0AB600572F74 /* ActivityIconSelectionView.swift */; };
 		BB43F9B22B5B24E200572F74 /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F9B12B5B24E200572F74 /* WorkoutsListView.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB10D5DC2B5F144F005482C1 /* StartTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTab.swift; sourceTree = "<group>"; };
+		BB10D5DF2B5F184A005482C1 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		BB10D5E12B5F196F005482C1 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		BB43F9AD2B5B0AA400572F74 /* ActivitySymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySymbol.swift; sourceTree = "<group>"; };
 		BB43F9AF2B5B0AB600572F74 /* ActivityIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIconSelectionView.swift; sourceTree = "<group>"; };
 		BB43F9B12B5B24E200572F74 /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB10D5DE2B5F182B005482C1 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BB10D5DF2B5F184A005482C1 /* CalendarView.swift */,
+				BB10D5E12B5F196F005482C1 /* CalendarHeaderView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		BB43F9B52B5B40A000572F74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +124,12 @@
 			isa = PBXGroup;
 			children = (
 				BBD55D132B5A18F600440A69 /* MyWorkoutsApp.swift */,
+				BB10D5DC2B5F144F005482C1 /* StartTab.swift */,
 				BB43F9B82B5B482900572F74 /* Acivity Views */,
 				BB43F9BD2B5B524400572F74 /* WWorkout Views */,
 				BBD55D252B5A1B0300440A69 /* Models */,
 				BB43F9B62B5B46D900572F74 /* ModalType.swift */,
+				BB10D5DE2B5F182B005482C1 /* Calendar */,
 				BB43F9B52B5B40A000572F74 /* Extensions */,
 				BB511F302B5C3E5900E9CEB7 /* Launch Screen.storyboard */,
 				BBD55D172B5A18F700440A69 /* Assets.xcassets */,
@@ -210,8 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB7E64582B5B845000862170 /* WorkoutFormView.swift in Sources */,
+				BB10D5E22B5F196F005482C1 /* CalendarHeaderView.swift in Sources */,
 				BB43F9B22B5B24E200572F74 /* WorkoutsListView.swift in Sources */,
+				BB10D5E02B5F184A005482C1 /* CalendarView.swift in Sources */,
 				BB43F9AE2B5B0AA400572F74 /* ActivitySymbol.swift in Sources */,
+				BB10D5DD2B5F144F005482C1 /* StartTab.swift in Sources */,
 				BBD55D272B5A1E3800440A69 /* Date+Extension.swift in Sources */,
 				BB7E64562B5B829700862170 /* WorkoutFormModel.swift in Sources */,
 				BBD55D162B5A18F600440A69 /* ActivityListView.swift in Sources */,
