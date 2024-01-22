@@ -1,12 +1,10 @@
 # MyWorkouts - Calendar Tally Video
 
-## Development Branch
+## Completed Source code
 
 ![mac128](Images/mac128.png)
 
-This is the development branch for the Calendar Tally Video.  Code here may be incomplete or incorrect.  
-
-DO NOT CLONE
+This is the completed source code for the video.
 
 If you want to support my work, you can - </br>
 
