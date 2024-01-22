@@ -1,12 +1,10 @@
 # MyWorkouts - Calendar Tally Video
 
-## Development Branch
+## Extended Project Branch
 
 ![mac128](Images/mac128.png)
 
-This is the development branch for the Calendar Tally Video.  Code here may be incomplete or incorrect.  
-
-DO NOT CLONE
+This branch extends what is covered in the video by adding the ability to tap on a day in the calendar to display a list of all activities that occurred on that day.
 
 If you want to support my work, you can - </br>
 
