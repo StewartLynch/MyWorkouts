@@ -26,28 +26,32 @@ struct CalendarHeaderView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Picker("", selection: $selectedActivity) {
-                    Text("All").tag(nil as Activity?)
-                    ForEach(activities) { activity in
-                        Text(activity.name).tag(activity as Activity?)
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                HStack {
-                    Picker("", selection: $selectedYear) {
-                        ForEach(years, id:\.self) { year in
-                            Text(String(year))
+                if !workouts.isEmpty{
+                    Picker("", selection: $selectedActivity) {
+                        Text("All").tag(nil as Activity?)
+                        ForEach(activities) { activity in
+                            Text(activity.name).tag(activity as Activity?)
                         }
                     }
-                    Picker("", selection: $selectedMonth) {
-                        ForEach(months.indices, id: \.self) { index in
-                            Text(months[index]).tag(index + 1)
+                    .buttonStyle(.borderedProminent)
+                    HStack {
+                        Picker("", selection: $selectedYear) {
+                            ForEach(years, id:\.self) { year in
+                                Text(String(year))
+                            }
+                        }
+                        Picker("", selection: $selectedMonth) {
+                            ForEach(months.indices, id: \.self) { index in
+                                Text(months[index]).tag(index + 1)
+                            }
                         }
                     }
+                    .buttonStyle(.bordered)
+                    CalendarView(date: monthDate, selectedActivity: selectedActivity)
+                    Spacer()
+                } else {
+                    ContentUnavailableView("No Workouts yet", systemImage: ActivitySymbol.mixedCardio.rawValue)
                 }
-                .buttonStyle(.bordered)
-                CalendarView(date: monthDate, selectedActivity: selectedActivity)
-                Spacer()
             }
             .navigationTitle("Tallies")
         }
