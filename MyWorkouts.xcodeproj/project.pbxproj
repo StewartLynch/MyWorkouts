@@ -86,8 +86,8 @@
 		BB43F9B52B5B40A000572F74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BBD55D262B5A1E3800440A69 /* Date+Extension.swift */,
 				BB43F9B32B5B409C00572F74 /* Color+Extension.swift */,
+				BBD55D262B5A1E3800440A69 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
